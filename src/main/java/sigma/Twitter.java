@@ -24,4 +24,18 @@ public class Twitter {
         
     }
     
+    void doTweet(String msg) {
+        WebElement twitterBtn =  driver.findElement(By.xpath(".//button[@class='tweet-action EdgeButton EdgeButton--primary js-tweet-btn']"));
+        WebElement tweetMsg =  driver.findElement(By.id("tweet-box-home-timeline"));
+        tweetMsg.click();
+        tweetMsg.sendKeys(msg);
+//        twitterBtn.click();
+        
+    }
+    
+    void doLogout() {
+        WebElement logout = driver.findElement(By.id("signout-button"));
+        logout.click();    
+    }
+    
 }
